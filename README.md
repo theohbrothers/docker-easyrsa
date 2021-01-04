@@ -7,7 +7,7 @@
 
 Based on [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
 
-# Tags
+## Tags
 
 | Tags |
 |:-------:|
