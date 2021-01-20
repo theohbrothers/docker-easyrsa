@@ -1,6 +1,6 @@
 version: '2.1'
 services:
-  easy-rsa:
+  easyrsa:
     container_name: easyrsa
     image: theohbrothers/docker-easyrsa:v3.0.7-alpine-3.12
 

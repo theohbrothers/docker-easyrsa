@@ -1,7 +1,7 @@
 @"
 version: '2.1'
 services:
-  easy-rsa:
+  easyrsa:
     container_name: easyrsa
     image: theohbrothers/docker-easyrsa:$( $VARIANT['tag'] )
 
