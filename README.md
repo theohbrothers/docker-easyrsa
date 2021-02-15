@@ -9,18 +9,18 @@ Based on [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
 
 ## Tags
 
-| Tags |
-|:-------:|
-| `:v3.0.7-alpine-3.12`, `:latest` |
-| `:v3.0.6-alpine-3.11` |
-| `:v3.0.6-alpine-3.10` |
-| `:v3.0.5-alpine-3.9` |
-| `:v3.0.4-alpine-3.8` |
-| `:v3.0.3-alpine-3.7` |
-| `:v3.0.1-alpine-3.6` |
-| `:v3.0.1-alpine-3.5` |
-| `:v3.0.1-alpine-3.4` |
-| `:v3.0.1-alpine-3.3` |
+| Tag | Dockerfile Build Context |
+|:-------:|:---------:|
+| `:v3.0.7-alpine-3.12`, `:latest` | [View](variants/v3.0.7-alpine-3.12 ) |
+| `:v3.0.6-alpine-3.11` | [View](variants/v3.0.6-alpine-3.11 ) |
+| `:v3.0.6-alpine-3.10` | [View](variants/v3.0.6-alpine-3.10 ) |
+| `:v3.0.5-alpine-3.9` | [View](variants/v3.0.5-alpine-3.9 ) |
+| `:v3.0.4-alpine-3.8` | [View](variants/v3.0.4-alpine-3.8 ) |
+| `:v3.0.3-alpine-3.7` | [View](variants/v3.0.3-alpine-3.7 ) |
+| `:v3.0.1-alpine-3.6` | [View](variants/v3.0.1-alpine-3.6 ) |
+| `:v3.0.1-alpine-3.5` | [View](variants/v3.0.1-alpine-3.5 ) |
+| `:v3.0.1-alpine-3.4` | [View](variants/v3.0.1-alpine-3.4 ) |
+| `:v3.0.1-alpine-3.3` | [View](variants/v3.0.1-alpine-3.3 ) |
 
 ## Configuration
 
