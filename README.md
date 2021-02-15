@@ -9,28 +9,27 @@ Based on [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
 
 ## Tags
 
-| Tags |
-|:-------:|
-| `:v3.0.1-alpine-3.3` |
-| `:v3.0.1-alpine-3.4` |
-| `:v3.0.1-alpine-3.5` |
-| `:v3.0.1-alpine-3.6` |
-| `:v3.0.3-alpine-3.7` |
-| `:v3.0.4-alpine-3.8` |
-| `:v3.0.5-alpine-3.9` |
-| `:v3.0.6-alpine-3.10` |
-| `:v3.0.6-alpine-3.11` |
-| `:v3.0.7-alpine-3.12`, `:latest` |
-
+| Tag | Dockerfile Build Context |
+|:-------:|:---------:|
+| `:v3.0.7-alpine-3.12`, `:latest` | [View](variants/v3.0.7-alpine-3.12 ) |
+| `:v3.0.6-alpine-3.11` | [View](variants/v3.0.6-alpine-3.11 ) |
+| `:v3.0.6-alpine-3.10` | [View](variants/v3.0.6-alpine-3.10 ) |
+| `:v3.0.5-alpine-3.9` | [View](variants/v3.0.5-alpine-3.9 ) |
+| `:v3.0.4-alpine-3.8` | [View](variants/v3.0.4-alpine-3.8 ) |
+| `:v3.0.3-alpine-3.7` | [View](variants/v3.0.3-alpine-3.7 ) |
+| `:v3.0.1-alpine-3.6` | [View](variants/v3.0.1-alpine-3.6 ) |
+| `:v3.0.1-alpine-3.5` | [View](variants/v3.0.1-alpine-3.5 ) |
+| `:v3.0.1-alpine-3.4` | [View](variants/v3.0.1-alpine-3.4 ) |
+| `:v3.0.1-alpine-3.3` | [View](variants/v3.0.1-alpine-3.3 ) |
 
 ## Configuration
 
 According to [`easy-rsa` documentation](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#configuration-reference), there are four ways to run `easy-rsa`, namely:
 
-1. Command-line options
-2. Environment variables
-3. `vars` file
-4. Built-in defaults
+- Command-line options
+- Environment variables
+- `vars` file
+- Built-in defaults
 
 ### Command line
 
@@ -40,7 +39,7 @@ See `easy-rsa` documentation on command line options and their matching environm
 
 See `easy-rsa` documentation on environment variables [here](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#environmental-variables-reference).
 
-### `vars` file.
+### `vars` file
 
 See `easy-rsa` documentation on using `vars` file [here](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#vars-autodetection).
 
