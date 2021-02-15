@@ -2,9 +2,54 @@
 $local:VARIANTS_MATRIX = @(
     @{
         package = 'easy-rsa'
-        package_version = '3.0.1-r0'
+        package_version = '3.0.7-r0'
         distro = 'alpine'
-        distro_version = '3.3'
+        distro_version = '3.12'
+        subvariants = @(
+            @{ components = @(); tag_as_latest = $true }
+        )
+    }
+    @{
+        package = 'easy-rsa'
+        package_version = '3.0.6-r0'
+        distro = 'alpine'
+        distro_version = '3.11'
+        subvariants = @(
+            @{ components = @() }
+        )
+    }
+    @{
+        package = 'easy-rsa'
+        package_version = '3.0.6-r0'
+        distro = 'alpine'
+        distro_version = '3.10'
+        subvariants = @(
+            @{ components = @() }
+        )
+    }
+    @{
+        package = 'easy-rsa'
+        package_version = '3.0.5-r0'
+        distro = 'alpine'
+        distro_version = '3.9'
+        subvariants = @(
+            @{ components = @() }
+        )
+    }
+    @{
+        package = 'easy-rsa'
+        package_version = '3.0.4-r0'
+        distro = 'alpine'
+        distro_version = '3.8'
+        subvariants = @(
+            @{ components = @() }
+        )
+    }
+    @{
+        package = 'easy-rsa'
+        package_version = '3.0.3-r0'
+        distro = 'alpine'
+        distro_version = '3.7'
         subvariants = @(
             @{ components = @() }
         )
@@ -13,7 +58,7 @@ $local:VARIANTS_MATRIX = @(
         package = 'easy-rsa'
         package_version = '3.0.1-r0'
         distro = 'alpine'
-        distro_version = '3.4'
+        distro_version = '3.6'
         subvariants = @(
             @{ components = @() }
         )
@@ -31,63 +76,18 @@ $local:VARIANTS_MATRIX = @(
         package = 'easy-rsa'
         package_version = '3.0.1-r0'
         distro = 'alpine'
-        distro_version = '3.6'
+        distro_version = '3.4'
         subvariants = @(
             @{ components = @() }
         )
     }
     @{
         package = 'easy-rsa'
-        package_version = '3.0.3-r0'
+        package_version = '3.0.1-r0'
         distro = 'alpine'
-        distro_version = '3.7'
+        distro_version = '3.3'
         subvariants = @(
             @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.4-r0'
-        distro = 'alpine'
-        distro_version = '3.8'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.5-r0'
-        distro = 'alpine'
-        distro_version = '3.9'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.6-r0'
-        distro = 'alpine'
-        distro_version = '3.10'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.6-r0'
-        distro = 'alpine'
-        distro_version = '3.11'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.7-r0'
-        distro = 'alpine'
-        distro_version = '3.12'
-        subvariants = @(
-            @{ components = @(); tag_as_latest = $true }
         )
     }
 )
