@@ -4,7 +4,7 @@
 [![github-tag](https://img.shields.io/github/tag/theohbrothers/docker-easyrsa)](https://github.com/theohbrothers/docker-easyrsa/releases/)
 [![docker-image-size](https://img.shields.io/docker/image-size/theohbrothers/docker-easyrsa/latest)](https://hub.docker.com/r/theohbrothers/docker-easyrsa)
 
-Based on [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
+Dockerized [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
 
 ## Tags
 
