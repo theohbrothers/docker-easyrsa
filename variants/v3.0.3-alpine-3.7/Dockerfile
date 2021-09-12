@@ -1,5 +1,3 @@
-
-
 FROM alpine:3.7
 
 RUN apk add --no-cache easy-rsa=3.0.3-r0 iptables
@@ -21,4 +19,3 @@ RUN echo "Looking for openssl.cnf" \
     && find / -name 'openssl*.cnf'
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-

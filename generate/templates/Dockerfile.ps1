@@ -20,4 +20,5 @@ RUN echo "Looking for openssl.cnf" \
     && find / -name 'openssl*.cnf'
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
+
 "@
