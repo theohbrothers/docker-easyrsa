@@ -1,7 +1,7 @@
 # docker-easyrsa
 
 [![github-actions](https://github.com/theohbrothers/docker-easyrsa/workflows/ci-master-pr/badge.svg)](https://github.com/theohbrothers/docker-easyrsa/actions)
-[![github-tag](https://img.shields.io/github/tag/theohbrothers/docker-easyrsa)](https://github.com/theohbrothers/docker-easyrsa/releases/)
+[![github-release](https://img.shields.io/github/v/release/theohbrothers/docker-easyrsa?style=flat-square)](https://github.com/theohbrothers/docker-easyrsa/releases/)
 [![docker-image-size](https://img.shields.io/docker/image-size/theohbrothers/docker-easyrsa/latest)](https://hub.docker.com/r/theohbrothers/docker-easyrsa)
 
 Dockerized [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
