@@ -22,7 +22,7 @@ Dockerized [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
 | `:v3.0.1-alpine-3.4` | [View](variants/v3.0.1-alpine-3.4 ) |
 | `:v3.0.1-alpine-3.3` | [View](variants/v3.0.1-alpine-3.3 ) |
 
-## Configuration
+## Usage
 
 According to [`easy-rsa` documentation](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#configuration-reference), there are four ways to run `easy-rsa`, namely:
 
