@@ -28,7 +28,7 @@ $(
 )
 
 "@ + @'
-## Configuration
+## Usage
 
 According to [`easy-rsa` documentation](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#configuration-reference), there are four ways to run `easy-rsa`, namely:
 
