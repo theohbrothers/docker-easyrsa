@@ -2,11 +2,20 @@
 $local:VARIANTS_MATRIX = @(
     @{
         package = 'easy-rsa'
+        package_version = '3.1.1-r0'
+        distro = 'alpine'
+        distro_version = '3.17'
+        subvariants = @(
+            @{ components = @() }
+        )
+    }
+    @{
+        package = 'easy-rsa'
         package_version = '3.0.8-r0'
         distro = 'alpine'
         distro_version = '3.13'
         subvariants = @(
-            @{ components = @(); tag_as_latest = $true }
+            @{ components = @() }
         )
     }
     @{
@@ -15,7 +24,7 @@ $local:VARIANTS_MATRIX = @(
         distro = 'alpine'
         distro_version = '3.12'
         subvariants = @(
-            @{ components = @(); }
+            @{ components = @() }
         )
     }
     @{
@@ -130,11 +139,7 @@ $VARIANTS = @(
                         $variant['distro']
                         $variant['distro_version']
                 ) -join '-'
-                tag_as_latest = if ( $subVariant.Contains('tag_as_latest') ) {
-                                    $subVariant['tag_as_latest']
-                                } else {
-                                    $false
-                                }
+                tag_as_latest = if ($variant['package_version'] -eq $local:VARIANTS_MATRIX[0]['package_version'] -and $subVariant['components'].Count -eq 0) { $true } else { $false }
             }
         }
     }
