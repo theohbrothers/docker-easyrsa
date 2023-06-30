@@ -10,7 +10,8 @@ Dockerized [`easy-rsa`](https://github.com/OpenVPN/easy-rsa).
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:v3.1.1-alpine-3.17`, `:latest` | [View](variants/v3.1.1-alpine-3.17) |
+| `:v3.1.2-alpine-3.18`, `:latest` | [View](variants/v3.1.2-alpine-3.18) |
+| `:v3.1.1-alpine-3.17` | [View](variants/v3.1.1-alpine-3.17) |
 | `:v3.0.8-alpine-3.13` | [View](variants/v3.0.8-alpine-3.13) |
 | `:v3.0.7-alpine-3.12` | [View](variants/v3.0.7-alpine-3.12) |
 | `:v3.0.6-alpine-3.11` | [View](variants/v3.0.6-alpine-3.11) |
