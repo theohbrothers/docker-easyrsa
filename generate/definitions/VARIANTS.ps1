@@ -2,6 +2,15 @@
 $local:VARIANTS_MATRIX = @(
     @{
         package = 'easy-rsa'
+        package_version = '3.1.5-r0'
+        distro = 'alpine'
+        distro_version = 'edge'
+        subvariants = @(
+            @{ components = @() }
+        )
+    }
+    @{
+        package = 'easy-rsa'
         package_version = '3.1.2-r0'
         distro = 'alpine'
         distro_version = '3.18'
