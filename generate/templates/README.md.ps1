@@ -7,6 +7,8 @@
 
 Dockerized [``easy-rsa``](https://github.com/OpenVPN/easy-rsa).
 
+The base image is ``alpine``.
+
 ## Tags
 
 | Tag | Dockerfile Build Context |
