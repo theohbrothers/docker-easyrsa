@@ -1,16 +1,6 @@
+$local:VERSIONS = @( Get-Content $PSScriptRoot/versions.json -Encoding utf8 -raw | ConvertFrom-Json )
+
 # Docker image variants' definitions
-$local:VERSIONS = @(
-    '3.1.5'
-    '3.1.2'
-    '3.1.1'
-    '3.0.8'
-    '3.0.7'
-    '3.0.6'
-    '3.0.5'
-    '3.0.4'
-    '3.0.3'
-    '3.0.1'
-)
 $local:VARIANTS_MATRIX = @(
     foreach ($v in $local:VERSIONS) {
         @{
@@ -24,7 +14,6 @@ $local:VARIANTS_MATRIX = @(
         }
     }
 )
-
 $VARIANTS = @(
     foreach ($variant in $VARIANTS_MATRIX){
         foreach ($subVariant in $variant['subvariants']) {
@@ -46,7 +35,7 @@ $VARIANTS = @(
                     }
                     components = $subVariant['components']
                 }
-                # Docker image tag. E.g. 'v3.0.0-alpine-3.17'
+                # Docker image tag. E.g. 'v3.0.0'
                 tag = @(
                         "v$( $variant['package_version'] )"
                         $subVariant['components'] | ? { $_ }
