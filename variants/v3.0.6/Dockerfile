@@ -12,7 +12,7 @@ RUN apk add --no-cache iptables openssl
 # See: https://github.com/OpenVPN/easy-rsa/tree/master/release-keys
 RUN set -eux; \
     apk add --no-cache gnupg gpg-agent dirmngr; \
-    URL=https://github.com/OpenVPN/easy-rsa/releases/download/v3.1.1/EasyRSA-3.1.1.tgz; \
+    URL=https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.6/EasyRSA-unix-v3.0.6.tgz; \
     FILE=$( basename $URL ); \
     wget -q "$URL"; \
     wget -q "$URL.sig"; \

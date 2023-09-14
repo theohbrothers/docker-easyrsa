@@ -26,6 +26,8 @@ $(
     }
 }) -join ''
 )
+All images are based on Alpine.
+
 
 "@ + @'
 ## Usage

@@ -1,130 +1,27 @@
 # Docker image variants' definitions
+$local:VERSIONS = @(
+    '3.1.5'
+    '3.1.2'
+    '3.1.1'
+    '3.0.8'
+    '3.0.7'
+    '3.0.6'
+    '3.0.5'
+    '3.0.4'
+    '3.0.3'
+    '3.0.1'
+)
 $local:VARIANTS_MATRIX = @(
-    @{
-        package = 'easy-rsa'
-        package_version = '3.1.5-r0'
-        distro = 'alpine'
-        distro_version = 'edge'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.1.2-r0'
-        distro = 'alpine'
-        distro_version = '3.18'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.1.1-r0'
-        distro = 'alpine'
-        distro_version = '3.17'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.8-r0'
-        distro = 'alpine'
-        distro_version = '3.13'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.7-r0'
-        distro = 'alpine'
-        distro_version = '3.12'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.6-r0'
-        distro = 'alpine'
-        distro_version = '3.11'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.6-r0'
-        distro = 'alpine'
-        distro_version = '3.10'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.5-r0'
-        distro = 'alpine'
-        distro_version = '3.9'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.4-r0'
-        distro = 'alpine'
-        distro_version = '3.8'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.3-r0'
-        distro = 'alpine'
-        distro_version = '3.7'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.1-r0'
-        distro = 'alpine'
-        distro_version = '3.6'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.1-r0'
-        distro = 'alpine'
-        distro_version = '3.5'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.1-r0'
-        distro = 'alpine'
-        distro_version = '3.4'
-        subvariants = @(
-            @{ components = @() }
-        )
-    }
-    @{
-        package = 'easy-rsa'
-        package_version = '3.0.1-r0'
-        distro = 'alpine'
-        distro_version = '3.3'
-        subvariants = @(
-            @{ components = @() }
-        )
+    foreach ($v in $local:VERSIONS) {
+        @{
+            package = 'easy-rsa'
+            package_version = $v
+            distro = 'alpine'
+            distro_version = '3.17'
+            subvariants = @(
+                @{ components = @() }
+            )
+        }
     }
 )
 
@@ -136,7 +33,6 @@ $VARIANTS = @(
                 _metadata = @{
                     package = $variant['package']
                     package_version = $variant['package_version']
-                    package_version_semver = "v$( $variant['package_version'] )" -replace '-r\d+', ''   # E.g. Strip out the '-r' in '2.3.0.0-r1'
                     distro = $variant['distro']
                     distro_version = $variant['distro_version']
                     platforms = & {
@@ -150,12 +46,12 @@ $VARIANTS = @(
                     }
                     components = $subVariant['components']
                 }
-                # Docker image tag. E.g. 'v2.3.0-alpine-3.6'
+                # Docker image tag. E.g. 'v3.0.0-alpine-3.17'
                 tag = @(
-                        "v$( $variant['package_version'] )" -replace '-r\d+', ''    # E.g. Strip out the '-r' in '2.3.0.0-r1'
+                        "v$( $variant['package_version'] )"
                         $subVariant['components'] | ? { $_ }
-                        $variant['distro']
-                        $variant['distro_version']
+                        # $variant['distro']
+                        # $variant['distro_version']
                 ) -join '-'
                 tag_as_latest = if ($variant['package_version'] -eq $local:VARIANTS_MATRIX[0]['package_version'] -and $subVariant['components'].Count -eq 0) { $true } else { $false }
             }
