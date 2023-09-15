@@ -18,10 +18,13 @@ RUN set -eux; \
         else { "v$( $VARIANT['_metadata']['package_version'] )" }
     )/$(
         # The prefix for the .tgz file is inconsistent
-        if ([version]$VARIANT['_metadata']['package_version'] -ge [version]'3.0.7') { 'EasyRSA-' }
-        if ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.6') { 'EasyRSA-unix-v' }
-        if ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.5') { 'EasyRSA-nix-' }
-        if ([version]$VARIANT['_metadata']['package_version'] -le [version]'3.0.4') { 'EasyRSA-' }
+        if ([version]$VARIANT['_metadata']['package_version'] -ge [version]'3.1.0') { 'EasyRSA-' }
+        elseif ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.9') { 'EasyRSA-v' }
+        elseif ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.8') { 'EasyRSA-' }
+        elseif ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.7') { 'EasyRSA-' }
+        elseif ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.6') { 'EasyRSA-unix-v' }
+        elseif ([version]$VARIANT['_metadata']['package_version'] -eq [version]'3.0.5') { 'EasyRSA-nix-' }
+        elseif ([version]$VARIANT['_metadata']['package_version'] -le [version]'3.0.4') { 'EasyRSA-' }
     )$( $VARIANT['_metadata']['package_version'] ).tgz; \
     FILE=`$( basename `$URL ); \
     wget -q "`$URL"; \
