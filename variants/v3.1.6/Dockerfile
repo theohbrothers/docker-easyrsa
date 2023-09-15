@@ -6,7 +6,7 @@ RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM"
 RUN apk add --no-cache ca-certificates
 
 # Install easyrsa dependencies
-RUN apk add --no-cache iptables openssl
+RUN apk add --no-cache openssl
 
 WORKDIR /data
 ENV EASYRSA=/usr/share/easy-rsa
