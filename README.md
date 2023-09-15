@@ -24,6 +24,7 @@ The base image is `alpine`.
 | `:v3.0.5` | [View](variants/v3.0.5) |
 | `:v3.0.4` | [View](variants/v3.0.4) |
 | `:v3.0.3` | [View](variants/v3.0.3) |
+| `:v3.0.2` | [View](variants/v3.0.2) |
 | `:v3.0.1` | [View](variants/v3.0.1) |
 
 All images are based on Alpine.
