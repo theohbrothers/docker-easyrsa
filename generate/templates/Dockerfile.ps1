@@ -45,8 +45,8 @@ RUN set -eux; \
     \
     rm -fv "`$FILE"; \
     rm -fv "`$FILE.sig"; \
-    rm -rf /root/.gnupg; \
-    apk del gnupg gpg-agent dirmngr;
+    apk del gnupg gpg-agent dirmngr; \
+    rm -rf /root/.gnupg;
 
 VOLUME /data
 
