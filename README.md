@@ -18,6 +18,7 @@ The base image is `alpine`.
 | `:v3.1.2` | [View](variants/v3.1.2) |
 | `:v3.1.1` | [View](variants/v3.1.1) |
 | `:v3.1.0` | [View](variants/v3.1.0) |
+| `:v3.0.9` | [View](variants/v3.0.9) |
 | `:v3.0.8` | [View](variants/v3.0.8) |
 | `:v3.0.7` | [View](variants/v3.0.7) |
 | `:v3.0.6` | [View](variants/v3.0.6) |
