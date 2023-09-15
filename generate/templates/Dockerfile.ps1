@@ -9,6 +9,10 @@ RUN apk add --no-cache ca-certificates
 # Install easyrsa dependencies
 RUN apk add --no-cache iptables openssl
 
+WORKDIR /data
+ENV EASYRSA=/usr/share/easy-rsa
+ENV EASYRSA_PKI=/data/pki
+
 # Install easyrsa
 # See: https://github.com/OpenVPN/easy-rsa/tree/master/release-keys
 RUN set -eux; \
@@ -33,20 +37,18 @@ RUN set -eux; \
     gpg --verify "`$FILE.sig" "`$FILE"; \
     mkdir -p /usr/share/easy-rsa; \
     tar -zxvf "`$FILE" --strip-components=1 -C /usr/share/easy-rsa; \
-    /usr/share/easy-rsa/easyrsa help; \
+    ln -sf /usr/share/easy-rsa/easyrsa /usr/local/bin/easyrsa; \
+    \
+    easyrsa help; \
+    easyrsa init-pki; \
+    rm -rfv /data/pki; \
+    \
     rm -fv "`$FILE"; \
     rm -fv "`$FILE.sig"; \
     rm -rf /root/.gnupg; \
     apk del gnupg gpg-agent dirmngr;
 
-ENV EASYRSA=/usr/share/easy-rsa
-WORKDIR /usr/share/easy-rsa
-
-# alpine openssl.cnf location. Use command find / -name 'openssl*.cnf'
-# <  v3.0.4: https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/easyrsa3/easyrsa#L1032-L1033
-# >= v3.0.4:
-RUN echo "Looking for openssl.cnf" \
-    && find /etc /usr -name 'openssl*.cnf'
+VOLUME /data
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh

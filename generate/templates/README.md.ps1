@@ -30,10 +30,26 @@ $(
 )
 All images are based on Alpine.
 
-
-"@ + @'
 ## Usage
 
+In this image, the PKI will be stored in ``/data/pki`` (i.e. ``EASYRSA_PKI=/data/pki``, see Dockerfile).
+
+``````sh
+# Generate /data/pki
+docker run --rm -it -v data:/data theohbrothers/docker-easyrsa:$( $VARIANTS | ? { $_['tag_as_latest'] } | % { $_['tag'] } ) init-pki
+# Generate CA, server and client certs
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:$( $VARIANTS | ? { $_['tag_as_latest'] } | % { $_['tag'] } ) build-ca nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:$( $VARIANTS | ? { $_['tag_as_latest'] } | % { $_['tag'] } ) build-server-full server-01 nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:$( $VARIANTS | ? { $_['tag_as_latest'] } | % { $_['tag'] } ) build-client-full client-01 nopass
+
+# Alternatively, a nice one liner to do everything
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:$( $VARIANTS | ? { $_['tag_as_latest'] } | % { $_['tag'] } ) sh -c 'set -e; easyrsa init-pki; easyrsa build-ca nopass; easyrsa build-server-full server-01 nopass; easyrsa build-client-full client-01 nopass; find /data/pki'
+``````
+
+
+"@
+
+@'
 According to [`easy-rsa` documentation](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#configuration-reference), there are four ways to run `easy-rsa`, namely:
 
 - Command-line options
