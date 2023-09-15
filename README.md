@@ -13,6 +13,7 @@ The base image is `alpine`.
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
 | `:v3.1.5`, `:latest` | [View](variants/v3.1.5) |
+| `:v3.1.4` | [View](variants/v3.1.4) |
 | `:v3.1.2` | [View](variants/v3.1.2) |
 | `:v3.1.1` | [View](variants/v3.1.1) |
 | `:v3.0.8` | [View](variants/v3.0.8) |
