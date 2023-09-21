@@ -2,7 +2,7 @@ $local:VERSIONS = @( Get-Content $PSScriptRoot/versions.json -Encoding utf8 -raw
 
 # Docker image variants' definitions
 $local:VARIANTS_MATRIX = @(
-    foreach ($v in $local:VERSIONS) {
+    foreach ($v in $local:VERSIONS.easyrsa.versions) {
         @{
             package = 'easy-rsa'
             package_version = $v
