@@ -4,7 +4,7 @@ set -eu
 
 if [ $# -gt 0 ]; then
     # Get all subcommands. 'help' is also a subcommand
-    SUBCOMMANDS=$( easyrsa | awk "/^'help'/,/^DIRECTORY/" | grep -vE "^'help'|^DIRECTORY|^\s*$" | awk '{print $1}'; echo help )
+    SUBCOMMANDS=$( easyrsa help | awk "/init-pki/,/^$/" | awk '{print $1}' | awk NF ; echo help )
     if echo "$SUBCOMMANDS" | grep "^$1$"; then
         set "easyrsa" "$@"
         echo "Executing: $@"
