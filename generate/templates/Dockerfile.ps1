@@ -43,11 +43,12 @@ RUN set -eux; \
     easyrsa init-pki; \
     rm -rfv /data/pki; \
     \
-    rm -fv "`$FILE"; \
-    rm -fv "`$FILE.sig"; \
+    rm -fv "$FILE"; \
+    rm -fv "$FILE.sig"; \
     apk del gnupg gpg-agent dirmngr; \
-    # Sleep 1 second to avoid error: rm: can't remove '/root/.gnupg/S.gpg-agent.extra': No such file or directory
-    sleep 1; \
+    # Fix error: rm: can't remove '/root/.gnupg/S.gpg-agent.extra': No such file or directory
+    killall dirmngr; \
+    killall gpg-agent; \
     rm -rf /root/.gnupg;
 
 VOLUME /data
