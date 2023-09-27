@@ -12,22 +12,22 @@ The base image is `alpine`.
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:v3.1.6`, `:latest` | [View](variants/v3.1.6) |
-| `:v3.1.5` | [View](variants/v3.1.5) |
-| `:v3.1.4` | [View](variants/v3.1.4) |
-| `:v3.1.3` | [View](variants/v3.1.3) |
-| `:v3.1.2` | [View](variants/v3.1.2) |
-| `:v3.1.1` | [View](variants/v3.1.1) |
-| `:v3.1.0` | [View](variants/v3.1.0) |
-| `:v3.0.9` | [View](variants/v3.0.9) |
-| `:v3.0.8` | [View](variants/v3.0.8) |
-| `:v3.0.7` | [View](variants/v3.0.7) |
-| `:v3.0.6` | [View](variants/v3.0.6) |
-| `:v3.0.5` | [View](variants/v3.0.5) |
-| `:v3.0.4` | [View](variants/v3.0.4) |
-| `:v3.0.3` | [View](variants/v3.0.3) |
-| `:v3.0.2` | [View](variants/v3.0.2) |
-| `:v3.0.1` | [View](variants/v3.0.1) |
+| `:3.1.6`, `:latest` | [View](variants/3.1.6) |
+| `:3.1.5` | [View](variants/3.1.5) |
+| `:3.1.4` | [View](variants/3.1.4) |
+| `:3.1.3` | [View](variants/3.1.3) |
+| `:3.1.2` | [View](variants/3.1.2) |
+| `:3.1.1` | [View](variants/3.1.1) |
+| `:3.1.0` | [View](variants/3.1.0) |
+| `:3.0.9` | [View](variants/3.0.9) |
+| `:3.0.8` | [View](variants/3.0.8) |
+| `:3.0.7` | [View](variants/3.0.7) |
+| `:3.0.6` | [View](variants/3.0.6) |
+| `:3.0.5` | [View](variants/3.0.5) |
+| `:3.0.4` | [View](variants/3.0.4) |
+| `:3.0.3` | [View](variants/3.0.3) |
+| `:3.0.2` | [View](variants/3.0.2) |
+| `:3.0.1` | [View](variants/3.0.1) |
 
 All images are based on Alpine.
 
@@ -37,14 +37,14 @@ In this image, the PKI will be stored in `/data/pki` (i.e. `EASYRSA_PKI=/data/pk
 
 ```sh
 # Generate /data/pki
-docker run --rm -it -v data:/data theohbrothers/docker-easyrsa:v3.1.6 init-pki
+docker run --rm -it -v data:/data theohbrothers/docker-easyrsa:3.1.6 init-pki
 # Generate CA, server and client certs
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:v3.1.6 build-ca nopass
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:v3.1.6 build-server-full server-01 nopass
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:v3.1.6 build-client-full client-01 nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.1.6 build-ca nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.1.6 build-server-full server-01 nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.1.6 build-client-full client-01 nopass
 
 # Alternatively, a nice one liner to do everything
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:v3.1.6 sh -c 'set -e; easyrsa init-pki; easyrsa build-ca nopass; easyrsa build-server-full server-01 nopass; easyrsa build-client-full client-01 nopass; find /data/pki'
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.1.6 sh -c 'set -e; easyrsa init-pki; easyrsa build-ca nopass; easyrsa build-server-full server-01 nopass; easyrsa build-client-full client-01 nopass; find /data/pki'
 ```
 
 According to [`easy-rsa` documentation](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#configuration-reference), there are four ways to run `easy-rsa`, namely:

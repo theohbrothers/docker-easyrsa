@@ -1,4 +1,4 @@
-# This script is to update versions in version.json, create PR(s) for each bumped version, merge PRs, and release
+# This script is to update versions in versions.json, create PR(s) for each bumped version, merge PRs, and release
 # It may be run manually or as a cron
 # Use -WhatIf for dry run
 [CmdletBinding(SupportsShouldProcess)]
@@ -53,4 +53,3 @@ try {
         Pop-Location
     }
 }
-
