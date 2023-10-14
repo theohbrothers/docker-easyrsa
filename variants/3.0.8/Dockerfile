@@ -33,9 +33,13 @@ RUN set -eux; \
     rm -fv ""; \
     rm -fv ".sig"; \
     apk del gnupg gpg-agent dirmngr; \
-    # Fix error: rm: can't remove '/root/.gnupg/S.gpg-agent.extra': No such file or directory
     killall dirmngr; \
     killall gpg-agent; \
+    # Fix error: rm: can't remove '/root/.gnupg/S.gpg-agent.extra': No such file or directory
+    while ls /root/.gnupg/S.* > /dev/null; do \
+        echo "Waiting for gpg sockets to be removed"; \
+        sleep 1; \
+    done; \
     rm -rf /root/.gnupg;
 
 VOLUME /data
