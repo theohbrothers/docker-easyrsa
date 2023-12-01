@@ -6,7 +6,7 @@ param (
     [Parameter(HelpMessage="Whether to clone a temporary repo before opening PRs. Useful in development")]
     [switch]$CloneTempRepo
 ,
-    [Parameter(HelpMessage="Whether to open a PR for each updated version in version.json")]
+    [Parameter(HelpMessage="Whether to open a PR for each updated version in versions.json")]
     [switch]$PR
 ,
     [Parameter(HelpMessage="Whether to merge each PR one after another (note that this is not GitHub merge queue which cannot handle merge conflicts). The queue ensures each PR is rebased to prevent merge conflicts")]
