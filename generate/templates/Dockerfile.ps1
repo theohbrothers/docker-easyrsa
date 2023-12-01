@@ -43,8 +43,8 @@ RUN set -eux; \
     easyrsa init-pki; \
     rm -rfv /data/pki; \
     \
-    rm -fv "$FILE"; \
-    rm -fv "$FILE.sig"; \
+    rm -fv "`$FILE"; \
+    rm -fv "`$FILE.sig"; \
     apk del gnupg gpg-agent dirmngr; \
     killall dirmngr; \
     killall gpg-agent; \
