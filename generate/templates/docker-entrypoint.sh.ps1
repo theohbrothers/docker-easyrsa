@@ -8,8 +8,6 @@ if [ $# -gt 0 ]; then
     if echo "$SUBCOMMANDS" | grep "^$1$" > /dev/null; then
         exec "easyrsa" "$@"
     fi
-else
-    exec "easyrsa" "$@"
 fi
 
 exec "$@"
