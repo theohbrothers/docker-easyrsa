@@ -12,7 +12,8 @@ The base image is `alpine`.
 
 | Tag | Dockerfile Build Context |
 |:-------:|:---------:|
-| `:3.2.3`, `:latest` | [View](variants/3.2.3) |
+| `:3.2.4`, `:latest` | [View](variants/3.2.4) |
+| `:3.2.3` | [View](variants/3.2.3) |
 | `:3.2.2` | [View](variants/3.2.2) |
 | `:3.2.1` | [View](variants/3.2.1) |
 | `:3.2.0` | [View](variants/3.2.0) |
@@ -42,14 +43,14 @@ In this image, the PKI will be stored in `/data/pki` (i.e. `EASYRSA_PKI=/data/pk
 
 ```sh
 # Generate /data/pki
-docker run --rm -it -v data:/data theohbrothers/docker-easyrsa:3.2.3 init-pki
+docker run --rm -it -v data:/data theohbrothers/docker-easyrsa:3.2.4 init-pki
 # Generate CA, server and client certs
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.3 build-ca nopass
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.3 build-server-full server-01 nopass
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.3 build-client-full client-01 nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.4 build-ca nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.4 build-server-full server-01 nopass
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.4 build-client-full client-01 nopass
 
 # Alternatively, a nice one liner to do everything
-docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.3 sh -c 'set -e; easyrsa init-pki; easyrsa build-ca nopass; easyrsa build-server-full server-01 nopass; easyrsa build-client-full client-01 nopass; find /data/pki'
+docker run --rm -it -e EASYRSA_BATCH=true -v data:/data theohbrothers/docker-easyrsa:3.2.4 sh -c 'set -e; easyrsa init-pki; easyrsa build-ca nopass; easyrsa build-server-full server-01 nopass; easyrsa build-client-full client-01 nopass; find /data/pki'
 ```
 
 According to [`easy-rsa` documentation](https://github.com/OpenVPN/easy-rsa/blob/v3.0.0/doc/EasyRSA-Advanced.md#configuration-reference), there are four ways to run `easy-rsa`, namely:
